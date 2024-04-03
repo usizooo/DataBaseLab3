@@ -1,0 +1,28 @@
+﻿<Window x:Class="DataBaseLab3.WindowEF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBaseLab3"
+        mc:Ignorable="d"
+        Title="WindowEF" Height="500" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="frame" Margin="5" NavigationUIVisibility="Hidden"/>
+        <DataGrid x:Name="CatsEFDataGrid" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding nickname}" Header="Кличка" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding age}" Header="Возраст" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding gender}" Header="Пол" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding takehomestatus}" Header="Возможность забрать домой" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding catsitter.firstname}" Header="Имя" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding catsitter.surname}" Header="Фамилия" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding catsitter.midlename}" Header="Отчество" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding catsitter.workexperience}" Header="Опыт работы" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
